@@ -38,12 +38,10 @@ class prefectureTableViewController: UITableViewController {
             identifier = "Cell3"
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PrefTableViewCell
 
-        var preflabel = cell.viewWithTag(1) as! UILabel
-        preflabel.text = prefectureArray[indexPath.row]
-        var countlabel = cell.viewWithTag(2) as! UILabel
-        countlabel.text = "\(indexPath.row + 1)番目の都道府県です"
+        cell.label1.text = prefectureArray[indexPath.row]
+        cell.label2.text = "\(indexPath.row + 1)番目の都道府県です"
         
         return cell
     }
